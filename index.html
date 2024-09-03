@@ -93,7 +93,26 @@
             </div>
         </div>
         <div class="contenedor-boton-compra">
-            <a class="btn btn-danger" href="#" role="button">Carta Completa</a>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Carta Completa
+            </button>
+        </div>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header text-light bg-danger">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Carta Completa</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="img/carta.png" class="img-fluid" alt="carta">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="container-fluid" id="container-nosotros">
@@ -130,8 +149,10 @@
             <footer class="py-3 my-4">
                 <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                     <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Inicio</a></li>
-                    <li class="nav-item"><a href="sugerencias.html" class="nav-link px-2 text-light">Sugerencias</a></li>
-                    <li class="nav-item"><a href="reclamaciones.html" class="nav-link px-2 text-light">Libro de Reclamaciones</a></li>
+                    <li class="nav-item"><a href="sugerencias.html" class="nav-link px-2 text-light">Sugerencias</a>
+                    </li>
+                    <li class="nav-item"><a href="reclamaciones.html" class="nav-link px-2 text-light">Libro de
+                            Reclamaciones</a></li>
                     <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Nosotros</a></li>
                 </ul>
                 <p class="text-center text-light">Grupo © 2024 Company, Inc</p>

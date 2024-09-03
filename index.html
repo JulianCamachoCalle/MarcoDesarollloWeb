@@ -5,39 +5,84 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Donna Pizza</title>
+    <link rel="stylesheet" href="index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md bg-body-tertiary">
+    <div class="container-fluid" id="container-principal">
+        <nav class="navbar fixed-top navbar-expand-md">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Carta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Membresia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Locales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Iniciar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Carta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Membresia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Locales</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Iniciar Sesion</a>
-                    </li>
-                </ul>
+            <img class="logo-principal" src="img/logo.png" alt="logo-principal">
+            <a class="btn btn-success" href="#" role="button">PIDE AHORA</a>
+        </div>
+    </div>
+    <div class="container-fluid" id="container-info">
+        <div class="contenedor-titulo-platos">
+            Disfruta Nuestros Platos
+        </div>
+        <div class="row" id="contenedor-platos-principales">
+            <div class="col col-xxl-4 col-sm-12">
+                <div class="card" id="plato">
+                    <img src="img/pizza-pepperoni.jpg" class="card-img-top" alt="pizza-pepperoni">
+                    <div class="card-body" id="plato-descripcion">
+                        <h5 class="card-title" id="nombre-plato">Pizza Americana</h5>
+                        <p class="card-text" id="ingredientes-plato">Queso mozzarella, jamón ingles, aceituna, pimiento
+                            y salsa pizzera</p>
+                        <p class="card-text" id="precio-plato">36 Familiar 32 Media</p>
+                        <a class="btn btn-compra" href="#" role="button">Comprar</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
+        <div class="contenedor-boton-compra">
+            <a class="btn btn-danger" href="#" role="button">Carta Completa</a>
+        </div>
+    </div>
+    <div class="container-fluid" id="container-nosotros">
+        <div class="row">
+            <div class="col col-lg-6 col-sm-12">
+
+            </div>
+            <div class="col col-lg-6 col-sm-12">
+
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

@@ -59,13 +59,17 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    padding: 24.5px 0;
 }
 
 .contenedor-titulo-platos,
-#contenedor-platos-principales,
-#contenedor-boton-compra {
+.contenedor-boton-compra {
     margin: 27px 0;
+}
+
+#contenedor-platos-principales {
+    display: flex;
+    justify-content: center;
+    margin: 27px 0px;
 }
 
 .contenedor-titulo-platos {
@@ -74,11 +78,6 @@ body {
     font-size: 48px;
     font-weight: 900;
     text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5);
-}
-
-#contenedor-platos-principales {
-    display: flex;
-    flex-direction: row;
 }
 
 #plato {
@@ -92,7 +91,7 @@ body {
 }
 
 .card-img-top {
-    width: 100% !important; 
+    width: 100% !important;
     height: 54% !important;
     border-radius: 25px 25px 0 0 !important;
 }
@@ -105,7 +104,9 @@ body {
     margin: 15px 0;
 }
 
-.card-title, .card-text, .card-body {
+.card-title,
+.card-text,
+.card-body {
     text-align: center;
     margin: 0px !important;
     padding: 0px !important;
@@ -126,6 +127,7 @@ body {
     font-style: italic;
     font-weight: 200;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 0px 5px 7.5px 5px !important;
 }
 
 #precio-plato {
@@ -134,10 +136,75 @@ body {
     font-size: 10px;
     font-weight: 700;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 7.5px 0px 10px 0px !important;
 }
 
-/* Nosotros */
+/* Contactanos */
+#container-contacto {
+    background-image: url("img/fondo-contacto.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    padding: 0;
+}
 
+#form-contacto {
+    background-color: rgb(10, 10, 10, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 73px 35px;
+    border-radius: 25px;
+}
+
+#titulo-contacto {
+    color: white;
+    font-family: "Montserrat";
+    font-size: 32px;
+    font-weight: 900;
+    margin: 0 7.5px;
+}
+
+#subtitulo-contacto {
+    color: white;
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-weight: 100;
+    margin: 0 7.5px 30px 7.5px;
+}
+
+#form-contacto #consultaForm {
+    display: flex;
+    align-items: center;
+}
+
+#input-contacto {
+    margin: 0 7.5px;
+}
+
+#input-contacto input {
+    background-color: rgb(255, 255, 255, 0.8);
+    color: rgb(0, 0, 0, 0.8);
+    font-family: "Montserrat";
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10.5px 9.5px;
+    border-radius: 6px;
+}
+
+#boton-contacto {
+    padding: 11.5px 42px !important;
+    margin: 0 7.5px;
+}
+
+/* Footer */
+#container-footer {
+    background-color: black;
+    font-family: "Montagu Slab";
+    font-size: 22px;
+    font-weight: 500;
+}
 
 /* Botones */
 .btn-success {

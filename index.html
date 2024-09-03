@@ -55,14 +55,38 @@
             Disfruta Nuestros Platos
         </div>
         <div class="row" id="contenedor-platos-principales">
-            <div class="col col-xxl-4 col-sm-12">
+            <div class="col-12 col-md-6 col-xl-4 mb-4">
                 <div class="card" id="plato">
                     <img src="img/pizza-pepperoni.jpg" class="card-img-top" alt="pizza-pepperoni">
                     <div class="card-body" id="plato-descripcion">
                         <h5 class="card-title" id="nombre-plato">Pizza Americana</h5>
                         <p class="card-text" id="ingredientes-plato">Queso mozzarella, jamón ingles, aceituna, pimiento
                             y salsa pizzera</p>
-                        <p class="card-text" id="precio-plato">36 Familiar 32 Media</p>
+                        <p class="card-text" id="precio-plato">29 Familiar 15 Media</p>
+                        <a class="btn btn-compra" href="#" role="button">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4 mb-4">
+                <div class="card" id="plato">
+                    <img src="img/pizza-pepperoni.jpg" class="card-img-top" alt="pizza-pepperoni">
+                    <div class="card-body" id="plato-descripcion">
+                        <h5 class="card-title" id="nombre-plato">Pizza Pepperoni</h5>
+                        <p class="card-text" id="ingredientes-plato">Queso mozzarella, pepperoni, aceituna, pimiento y
+                            salsa pizzera</p>
+                        <p class="card-text" id="precio-plato">32 Familiar 17 Media</p>
+                        <a class="btn btn-compra" href="#" role="button">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4 mb-4">
+                <div class="card" id="plato">
+                    <img src="img/pizza-pepperoni.jpg" class="card-img-top" alt="pizza-pepperoni">
+                    <div class="card-body" id="plato-descripcion">
+                        <h5 class="card-title" id="nombre-plato">Donna Pizza</h5>
+                        <p class="card-text" id="ingredientes-plato">Queso mozzarella, pechuga de pollo deshilachado,
+                            cebolla blanca, aceituna, pimiento, tocino y salsa pizzera</p>
+                        <p class="card-text" id="precio-plato">34 Familiar 18 Media</p>
                         <a class="btn btn-compra" href="#" role="button">Comprar</a>
                     </div>
                 </div>
@@ -82,7 +106,38 @@
             </div>
         </div>
     </div>
-
+    <div class="container-fluid" id="container-contacto">
+        <div class="form-container" id="form-contacto">
+            <h2 class="text-left font-weight-bold" id="titulo-contacto">¡Estamos para Servirte!</h2>
+            <p class="text-left font-weight-bold" id="subtitulo-contacto">¿Tienes alguna pregunta o quieres hacer un
+                pedido? ¡Estamos aquí para ayudarte! Escríbenos o llámanos, y con gusto te atenderemos.</p>
+            <form id="consultaForm" class="form-inline">
+                <div class="form-group" id="input-contacto">
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                </div>
+                <div class="form-group" id="input-contacto">
+                    <input type="email" class="form-control" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-group" id="input-contacto">
+                    <input type="tel" class="form-control" id="telefono" placeholder="Teléfono" required>
+                </div>
+                <button type="submit" class="btn btn-danger" id="boton-contacto">Solicitar Ayuda</button>
+            </form>
+        </div>
+    </div>
+    <div class="container-fluid" id="container-footer">
+        <div class="container">
+            <footer class="py-3 my-4">
+                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Inicio</a></li>
+                    <li class="nav-item"><a href="sugerencias.html" class="nav-link px-2 text-light">Sugerencias</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Libro de Reclamaciones</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Nosotros</a></li>
+                </ul>
+                <p class="text-center text-light">Grupo © 2024 Company, Inc</p>
+            </footer>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

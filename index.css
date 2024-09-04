@@ -13,8 +13,7 @@ body {
     background-image: url("img/fondo-principal.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
-    height: 900px;
+    height: 62.5vw;
 }
 
 /* Navbar */
@@ -22,35 +21,16 @@ body {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.39) 68%, rgba(102, 102, 102, 0) 100%);
 }
 
-.collapse {
-    justify-content: center;
-}
-
 .navbar-nav .nav-item .nav-link {
-    margin: 10px 20px;
     color: white;
+    padding: 0 20px !important;
     font-family: "Montserrat";
-    font-size: 18px;
     font-weight: 200;
 }
 
 .active {
     color: white !important;
     font-weight: 600 !important;
-}
-
-/* Logo principal */
-.container-fluid {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo-principal {
-    padding: 20px;
-    max-width: 600px;
-    max-height: 450px;
 }
 
 /* Apartado de Platos */
@@ -61,61 +41,29 @@ body {
     width: 100%;
 }
 
-.contenedor-titulo-platos,
-.contenedor-boton-compra {
-    margin: 27px 0;
-}
-
-#contenedor-platos-principales {
-    display: flex;
-    justify-content: center;
-    margin: 27px 0px;
-}
-
 .contenedor-titulo-platos {
     color: white;
     font-family: "Montagu Slab";
-    font-size: 48px;
+    font-size: 3.333vw;
     font-weight: 900;
     text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5);
 }
 
 #plato {
-    width: 350px !important;
-    height: 370px !important;
-    margin: 0px 20px !important;
-    border: none !important;
     border-radius: 25px !important;
     background-color: rgb(0, 164, 77) !important;
     box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.5) !important;
 }
 
 .card-img-top {
-    width: 100% !important;
     height: 54% !important;
     border-radius: 25px 25px 0 0 !important;
-}
-
-#plato-descripcion {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 15px 0;
-}
-
-.card-title,
-.card-text,
-.card-body {
-    text-align: center;
-    margin: 0px !important;
-    padding: 0px !important;
 }
 
 #nombre-plato {
     color: white;
     font-family: "Montagu Slab";
-    font-size: 20px;
+    font-size: 1.389vw;
     font-weight: 900;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -123,20 +71,18 @@ body {
 #ingredientes-plato {
     color: rgb(240, 240, 240);
     font-family: "Montserrat";
-    font-size: 12px;
+    font-size: 0.833vw;
     font-style: italic;
     font-weight: 200;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 0px 5px 7.5px 5px !important;
 }
 
 #precio-plato {
     color: rgb(255, 215, 0);
     font-family: "Montserrat";
-    font-size: 10px;
+    font-size: 0.694vw;
     font-weight: 700;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 7.5px 0px 10px 0px !important;
 }
 
 /* Contactanos */
@@ -211,9 +157,7 @@ body {
     background-color: rgb(0, 164, 77) !important;
     color: white !important;
     border: none !important;
-    padding: 10px 15px !important;
     font-family: "Montserrat" !important;
-    font-size: 18px !important;
     font-weight: 850 !important;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
@@ -242,8 +186,6 @@ body {
 .btn-compra {
     background-color: rgb(240, 26, 36) !important;
     color: white !important;
-    border: none !important;
-    padding: 5px 8px !important;
     font-family: "Montserrat" !important;
     font-size: 10px !important;
     font-weight: 850 !important;

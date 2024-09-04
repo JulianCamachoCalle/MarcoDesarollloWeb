@@ -41,3 +41,19 @@ body {
     padding-top: 40px;
     /* Ajuste para evitar la superposición con la barra de navegación */
 }
+.card{
+    margin: 0 auto;
+    background-color: chocolate;
+    border: solid white;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+}
+.card1{
+    background-color: rgba(0, 0, 0, 0.5); /* Blanco con 50% de transparencia */
+    border: solid rgba(0, 0, 0, 0.3); /* Borde con transparencia */
+    padding: 20px;
+    border-radius: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    width: 400px;
+    
+}

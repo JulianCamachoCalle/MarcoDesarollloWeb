@@ -13,7 +13,6 @@ body {
     background-image: url("img/fondo-principal.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 62.5vw;
 }
 
 /* Navbar */
@@ -23,7 +22,7 @@ body {
 
 .navbar-nav .nav-item .nav-link {
     color: white;
-    padding: 0 20px !important;
+    padding: 5px 20px !important;
     font-family: "Montserrat";
     font-weight: 200;
 }
@@ -44,7 +43,7 @@ body {
 .contenedor-titulo-platos {
     color: white;
     font-family: "Montagu Slab";
-    font-size: 3.333vw;
+    font-size: 3rem;
     font-weight: 900;
     text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5);
 }
@@ -56,14 +55,14 @@ body {
 }
 
 .card-img-top {
-    height: 54% !important;
+    max-height: 12.5rem !important;
     border-radius: 25px 25px 0 0 !important;
 }
 
 #nombre-plato {
     color: white;
     font-family: "Montagu Slab";
-    font-size: 1.389vw;
+    font-size: 1.25rem;
     font-weight: 900;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -71,7 +70,7 @@ body {
 #ingredientes-plato {
     color: rgb(240, 240, 240);
     font-family: "Montserrat";
-    font-size: 0.833vw;
+    font-size: 0.75rem;
     font-style: italic;
     font-weight: 200;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -80,7 +79,7 @@ body {
 #precio-plato {
     color: rgb(255, 215, 0);
     font-family: "Montserrat";
-    font-size: 0.694vw;
+    font-size: 0.625rem;
     font-weight: 700;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -90,73 +89,68 @@ body {
     background-image: url("img/fondo-contacto.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 8.625rem;
     width: 100%;
-    height: 500px;
-    padding: 0;
 }
 
 #form-contacto {
     background-color: rgb(10, 10, 10, 0.8);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 73px 35px;
     border-radius: 25px;
 }
 
 #titulo-contacto {
     color: white;
     font-family: "Montserrat";
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 900;
-    margin: 0 7.5px;
 }
 
 #subtitulo-contacto {
     color: white;
     font-family: "Montserrat";
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: 100;
-    margin: 0 7.5px 30px 7.5px;
-}
-
-#form-contacto #consultaForm {
-    display: flex;
-    align-items: center;
-}
-
-#input-contacto {
-    margin: 0 7.5px;
 }
 
 #input-contacto input {
     background-color: rgb(255, 255, 255, 0.8);
     color: rgb(0, 0, 0, 0.8);
     font-family: "Montserrat";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 400;
-    padding: 10.5px 9.5px;
-    border-radius: 6px;
-}
-
-#boton-contacto {
-    padding: 11.5px 42px !important;
-    margin: 0 7.5px;
+    border-radius: 0.375rem;
 }
 
 /* Footer */
 #container-footer {
-    background-color: black;
+    background-color: black !important;
+}
+
+#container-footer h5 {
     font-family: "Montagu Slab";
-    font-size: 22px;
+    font-size: 1.375rem;
     font-weight: 500;
+}
+
+#container-footer .nav-item {
+    font-family: "Montagu Slab";
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+#container-footer p {
+    font-family: "Montagu Slab";
+    font-size: 1rem;
+    font-weight: 300;
 }
 
 /* Botones */
 .btn-success {
     background-color: rgb(0, 164, 77) !important;
     color: white !important;
+    padding: 0.938rem 1.25rem !important;
     border: none !important;
+    border-radius: 0.375rem !important;
     font-family: "Montserrat" !important;
     font-weight: 850 !important;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
@@ -171,7 +165,8 @@ body {
     background-color: rgb(240, 26, 36) !important;
     color: white !important;
     border: none !important;
-    padding: 10px 15px !important;
+    border-radius: 0.375rem !important;
+    padding: 0.938rem 1.25rem !important;
     font-family: "Montserrat" !important;
     font-size: 18px !important;
     font-weight: 850 !important;
@@ -187,7 +182,7 @@ body {
     background-color: rgb(240, 26, 36) !important;
     color: white !important;
     font-family: "Montserrat" !important;
-    font-size: 10px !important;
+    font-size: 0.625rem !important;
     font-weight: 850 !important;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);

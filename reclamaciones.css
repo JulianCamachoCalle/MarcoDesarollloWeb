@@ -7,9 +7,11 @@
 body {
     background-image: url("img/fondo-principal.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover ;
+    background-attachment: fixed;
     height: 100vh;
 }
+
 
 /* Navbar */
 .navbar {
@@ -23,7 +25,6 @@ body {
 .navbar-nav .nav-item .nav-link {
     margin: 10px 20px;
     color: white;
-    font-family: "Montserrat";
     font-size: 18px;
     font-weight: 200;
 }
@@ -31,6 +32,23 @@ body {
 .active {
     color: white !important;
     font-weight: 600 !important;
+}
+
+.card{
+    background-color: rgb(15, 15, 15);
+    color: aliceblue;
+    border-radius: 20px;
+    border: solid aliceblue;
+}
+
+.card-title{
+    text-align: center;
+}
+
+.btn{
+    background-color: crimson;
+    border-radius: 8px;
+    font-weight: bold;
 }
 
 #container-contenido {

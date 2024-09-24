@@ -1,0 +1,57 @@
+@import "navbar-footer.css";
+@import "botones.css";
+@import "platos.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+}
+
+/* Fondo de inicio y medidas */
+#container-locales {
+    background-image: url("../img/fondo-locales.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.titulo-locales {
+    color: white;
+    font-family: "Montagu Slab";
+    font-size: 3rem;
+    font-weight: 200;
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 1);
+    margin: 15px 0;
+}
+
+.descripcion-locales {
+    color: white;
+    font-family: "Montagu Slab";
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, 1);
+    margin: 15px 0;
+}
+
+.map-locales {
+    max-width: 700px;
+    max-height: 500px;
+}
+
+.botones-locales button {
+    margin: 0.938rem 1.875rem;
+    padding: 0.938rem 1.875rem;
+}
+
+.desactivado {
+    background-color: none !important;
+}
+
+iframe {
+    border-radius: 25px;
+}

@@ -1,5 +1,5 @@
 <!-- Header -->
-<div th:fragment="header" class="container-fluid p-0">
+<div th:fragment="header" class="container-fluid m-0 p-0">
     <!--NavBar-->
     <nav class="navbar navbar-expand-md" style="height: 6.25rem;">
         <div class="container-fluid d-flex">
@@ -10,19 +10,19 @@
             <div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                        <a class="nav-link" th:href="@{/index}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="carta.html">Carta</a>
+                        <a class="nav-link" th:href="@{/carta}">Carta</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="membresia.html">Membresia</a>
+                        <a class="nav-link" th:href="@{/membresia}">Membresía</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="locales.html">Locales</a>
+                        <a class="nav-link" th:href="@{/locales}">Locales</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Iniciar Sesión</a>
+                        <a class="nav-link" th:href="@{/login}">Iniciar Sesión</a>
                     </li>
                 </ul>
             </div>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f8f1e4;
+                color: #333;
+                margin: 0;
+                padding: 0;
+            }
+
+            h1 {
+                text-align: center;
+                color: #e74c3c;
+                font-family: 'Georgia', serif;
+                font-size: 2.5em;
+                margin-top: 20px;
+                text-shadow: 2px 2px #f5e79e;
+            }
+
+            table {
+                margin: 20px auto;
+                width: 80%;
+                border-collapse: collapse;
+                background-color: #fff8f0;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            table th, table td {
+                padding: 12px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+
+            table th {
+                background-color: #e74c3c;
+                color: white;
+                font-size: 1.1em;
+                font-weight: bold;
+            }
+
+            table td {
+                font-size: 1em;
+                color: #555;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            tr:hover {
+                background-color: #f5e79e;
+            }
+
+            thead {
+                background-color: #e74c3c;
+                color: white;
+            }
+
+            table {
+                border: 3px solid #e74c3c;
+                border-radius: 5px;
+            }
+
+            @media screen and (max-width: 600px) {
+                table, thead, tbody, th, td, tr {
+                    display: block;
+                    width: 100%;
+                }
+                th, td {
+                    text-align: right;
+                    padding: 10px;
+                    display: block;
+                    text-align: right;
+                }
+                tr {
+                    margin-bottom: 15px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Lista de Sugerencias</h1>
+        <table border="3">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Descripcion</th>
+                </tr>  
+            </thead>
+            <tbody>
+                <tr th:each="objSug : ${listaA}">
+
+                    <td th:text="${objSug.nom}"></td>
+                    <td th:text="${objSug.email}"></td>
+                    <td th:text="${objSug.descrip}"></td>
+                </tr>
+            </tbody>
+
+
+        </table>
+    </body>
+</html>

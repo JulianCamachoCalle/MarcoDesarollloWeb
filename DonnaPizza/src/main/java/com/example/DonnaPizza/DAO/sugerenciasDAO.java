@@ -1,5 +1,5 @@
 package com.example.DonnaPizza.DAO;
-import com.example.DonnaPizza.Entity.sugerencias;
+import com.example.DonnaPizza.Model.sugerencias;
 import java.util.ArrayList;
 
 public class sugerenciasDAO {

@@ -1,4 +1,4 @@
-package com.example.DonnaPizza.Entity;
+package com.example.DonnaPizza.Model;
 
 
 public class sugerencias {

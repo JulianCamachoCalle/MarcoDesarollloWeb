@@ -1,10 +1,10 @@
 package com.example.DonnaPizza.controladores;
 
+import com.example.DonnaPizza.DAO.sugerenciasDAO;
+import com.example.DonnaPizza.Model.sugerencias;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import com.example.DonnaPiza.DAO.sugerenciasDAO;
-import com.example.DonnaPiza.Entity.sugerencias;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.validation.annotation.Validated;
 import java.util.ArrayList;

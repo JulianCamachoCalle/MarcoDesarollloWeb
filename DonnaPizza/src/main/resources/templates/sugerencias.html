@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -96,19 +96,19 @@
                         <div class="card-body">
                             <h5 class="card-title">Sugerencias</h5>
                             <p class="card-text">Coloca tus sugerencias</p>
-                            <form>
+                            <form th:action="@{/registrar}" th:object="${sugerencias}" method="post">
                                 <div class="mb-3">
                                     <label for="nombre" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" th:name="nom">
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                    <input type="email" class="form-control" id="email" placeholder="Email" th:name="email">
                                 </div>
                                 <div class="mb-3">
                                     <label for="sugerencia" class="form-label">Sugerencia</label>
                                     <textarea class="form-control" id="sugerencia" rows="3"
-                                        placeholder="Tu sugerencia"></textarea>
+                                        placeholder="Tu sugerencia" th:name="descrip"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-success">Enviar</button>
                             </form>

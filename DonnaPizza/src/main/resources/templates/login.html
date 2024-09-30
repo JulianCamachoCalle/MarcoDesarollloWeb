@@ -30,7 +30,7 @@
         <main id="main" class="main d-flex justify-content-center align-items-center flex-column vh-100">
             <div class="contenedor position-relative rounded-5 overflow-hidden bg-light shadow-lg p-3 rounded" id="contenedor">
                 <div class="form-contenedor crear-cuenta position-absolute">
-                    <form class="d-flex justify-content-center align-items-center flex-column px-4" action="#" method="POST">
+                    <form class="d-flex justify-content-center align-items-center flex-column px-4" th:action="@{/dataFormRegistro}" method="POST" th:object="${usuario}">
                         <h1>Create una Cuenta</h1>
                         <div class="social-iconos my-2">
                             <a href="#" class="iconos mx-2 justify-content-center align-items-center">
@@ -43,13 +43,13 @@
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
                         </div>
-                        <input class="my-1" type="text" name="nombres" id="nombres" placeholder="Nombre">
-                        <input class="my-1" type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
-                        <input class="my-1" type="email" name="correo" id="correo" placeholder="Correo Electronico">
-                        <input class="my-1" type="text" name="numero" id="numero" placeholder="Número de teléfono">
-                        <input class="my-1" type="date" name="cumpleanos" id="cumpleanos" placeholder="Fecha de Nacimiento">
-                        <input class="my-1" type="password" name="password" id="password" placeholder="Contraseña">
-                        <button type="sumbit" class="btn btn-login-register border px-3 py-2 my-2" name="registro">Registrarse</button>
+                        <input class="my-1" type="text" name="nombre" id="nombre" th:value="*{nombre}" placeholder="Nombre">
+                        <input class="my-1" type="text" name="apellidos" id="apellidos" th:value="*{apellidos}" placeholder="Apellidos">
+                        <input class="my-1" type="email" name="correo" id="correo" th:value="*{correo}" placeholder="Correo Electronico">
+                        <input class="my-1" type="text" name="numero" id="numero" th:value="*{numero}" placeholder="Número de teléfono">
+                        <input class="my-1" type="date" name="cumpleanos" id="cumpleanos" th:value="*{cumpleanos}" placeholder="Fecha de Nacimiento">
+                        <input class="my-1" type="password" name="contrasena" id="password" th:value="*{contrasena}" placeholder="Contraseña">
+                        <button type="submit" class="btn btn-login-register border px-3 py-2 my-2" name="registro">Registrarse</button>
                     </form>
                 </div>
                 <div class="form-contenedor position-absolute iniciar-sesion">
@@ -69,7 +69,7 @@
                         <input class="my-1" type="email" name="correo" placeholder="Ingresa tu correo">
                         <input class="my-1" type="password" name="password" placeholder="Contraseña">
                         <a href="#" class="my-3">Olvidaste tu contraseña?</a>
-                        <button type="sumbit" class="btn btn-login-register border px-3 py-2" name="registro">Iniciar Sesion</button>
+                        <button type="submit" class="btn btn-login-register border px-3 py-2" name="registro">Iniciar Sesion</button>
                     </form>
                 </div>
                 <div class="cambiar-contenedor position-absolute overflow-hidden">

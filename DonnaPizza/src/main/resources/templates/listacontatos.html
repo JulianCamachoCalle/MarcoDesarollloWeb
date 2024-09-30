@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Lista de Sugerencias</h1>
+        <table border="3">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Telefono</th>
+                </tr>  
+            </thead>
+            <tbody>
+                <tr th:each="objCont : ${listaA}">
+
+                    <td th:text="${objCont.nombre}"></td>
+                    <td th:text="${objCont.email}"></td>
+                    <td th:text="${objCont.telefono}"></td>
+        </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -67,7 +67,7 @@ public class ControladorPrincipal {
         }
         return "sugerencias";
     }
-    @GetMapping("/lista")
+    @GetMapping("/listasugerencias")
     public String getLista(Model model){
         List<sugerencias> listSug= new ArrayList<>();
         listSug=objSug.getsugerencias();

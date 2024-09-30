@@ -74,7 +74,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Sugerencias</h5>
                             <p class="card-text">Coloca tus sugerencias</p>
-                            <form th:action="@{/registrar}" th:object="${sugerencias}" method="post">
+                            <form th:action="@{/registrarsugerencia}" th:object="${sugerencias}" method="post">
                                 <div class="mb-3">
                                     <label for="nombre" class="form-label">Nombre</label>
                                     <input type="text" class="form-control" id="nombre" placeholder="Nombre" th:name="nom">

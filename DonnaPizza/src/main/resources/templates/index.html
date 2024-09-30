@@ -140,15 +140,15 @@
                     <p class="text-left font-weight-bold mx-2" id="subtitulo-contacto">¿Tienes alguna pregunta o quieres hacer
                         un
                         pedido? ¡Estamos aquí para ayudarte! Escríbenos o llámanos, y con gusto te atenderemos.</p>
-                    <form id="consultaForm" class="row">
+                    <form id="consultaForm" class="row" th:action="@{/registrar}" th:object="${contactopizza}" method="post">
                         <div class="form-group col-lg-3 col-md-6 col-sm-12 mb-3" id="input-contacto">
-                            <input type="text" class="form-control p-2" id="nombre" placeholder="Nombre" required>
+                            <input type="text" class="form-control p-2" id="nombre" placeholder="Nombre" required th:name="nombre">
                         </div>
                         <div class="form-group col-lg-3 col-md-6 col-sm-12 mb-3" id="input-contacto">
-                            <input type="email" class="form-control p-2" id="email" placeholder="Email" required>
+                            <input type="email" class="form-control p-2" id="email" placeholder="Email" required th:name="email">
                         </div>
                         <div class="form-group col-lg-3 col-md-6 col-sm-12 mb-3" id="input-contacto">
-                            <input type="tel" class="form-control p-2" id="telefono" placeholder="Teléfono" required>
+                            <input type="tel" class="form-control p-2" id="telefono" placeholder="Teléfono" required th:name="telefono">
                         </div>
                         <div class="form-group col-lg-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center"
                              id="input-contacto">

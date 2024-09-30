@@ -42,7 +42,7 @@ public class ControladorPrincipal {
     public String sugerencias(Model model) {
         return "sugerencias";
     }
-    @PostMapping("/registrar")
+    @PostMapping("/registrarsugerencia")
     public String registarSugerencia(@Validated sugerencias sugerencia){
         if(sugerencia!=null){ 
             objSug.registrarSug(sugerencia);

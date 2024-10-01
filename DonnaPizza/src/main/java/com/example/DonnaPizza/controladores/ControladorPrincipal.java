@@ -125,4 +125,26 @@ public class ControladorPrincipal {
     public String reclamaciones(Model model) {
         return "reclamaciones";
     }
+    
+    @GetMapping("/fromclient")
+    public String fromclient(Model model) {
+        return "fromclient";
+    }
+    
+    //clientes
+    @RequestMapping("/dataclientfrom")
+    public String dataclientfrom(@RequestParam("nombre") String nombre,
+            @RequestParam("apellidos") String apellidos,
+            @RequestParam("correo") String correo,
+            @RequestParam("numero") String numero,
+            @RequestParam("direccion") String direccion,
+            Model model
+    ) {
+        model.addAttribute("nombre", nombre);
+        model.addAttribute("apellidos", apellidos);
+        model.addAttribute("correo", correo);
+        model.addAttribute("numero", numero);
+        model.addAttribute("direccion", direccion);
+        return "client";
+    }
 }

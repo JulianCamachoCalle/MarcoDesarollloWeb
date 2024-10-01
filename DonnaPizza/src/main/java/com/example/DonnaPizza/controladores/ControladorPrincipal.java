@@ -1,10 +1,12 @@
 package com.example.DonnaPizza.controladores;
 
 import com.example.DonnaPizza.DAO.sugerenciasDAO;
+import com.example.DonnaPizza.DAO.ContactoDAO;
 import com.example.DonnaPizza.Model.sugerencias;
 import com.example.DonnaPizza.Model.usuario;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import com.example.DonnaPizza.Model.ContactoDp;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.validation.annotation.Validated;
@@ -24,6 +26,25 @@ public class ControladorPrincipal {
     @GetMapping("/index")
     public String index(Model model) {
         return "index";
+    }
+    ContactoDAO objCont = new ContactoDAO(); 
+    @GetMapping({"/contacto","/"})
+    public String contacto(Model model){
+        return "contactopizza";
+    }
+    @PostMapping("/registrar")
+    public String registarContacto(@Validated ContactoDp contacto){
+        if(contacto!=null){ 
+            objCont.registrarCont(contacto);
+        }
+        return "contactopizza";
+    }
+     @GetMapping("/listacontacto")
+     public String getLista(Model model){
+        List<ContactoDp> listCont= new ArrayList<>();
+        listCont=objCont.getcontacto();
+        model.addAttribute("listaA", listCont);
+        return "listacontactos";
     }
 
     @GetMapping("/carta")

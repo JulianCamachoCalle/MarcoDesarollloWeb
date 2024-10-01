@@ -29,15 +29,12 @@
         <main id="main" class="main d-flex justify-content-center align-items-center flex-column vh-100">
             <div class="card" style="width: 24rem; border: 2px solid #ff5733; border-radius: 25px;">
                 <div class="card-body" style="background-color: #ffe5e5; border-radius: 25px;">
-                    <h5 class="card-title text-center" style="color: #c0392b; font-family: 'Montserrat', cursive; font-size: 1.8rem;">Datos del Usuario</h5>
-                    <p class="card-text" style="font-size: 1.2rem;"><strong>Nombre:</strong> <span th:text="${usuario.nombre}"></span></p>
-                    <p class="card-text" style="font-size: 1.2rem;"><strong>Apellidos:</strong> <span th:text="${usuario.apellidos}"></span></p>
-                    <p class="card-text" style="font-size: 1.2rem;"><strong>Correo:</strong> <span th:text="${usuario.correo}"></span></p>
-                    <p class="card-text" style="font-size: 1.2rem;"><strong>Número:</strong> <span th:text="${usuario.numero}"></span></p>
-                    <p class="card-text" style="font-size: 1.2rem;"><strong>Cumpleaños:</strong> <span th:text="${usuario.cumpleanos}"></span></p>
-                    <div class="text-center mt-4">
-                        <a href="/editarPerfil" class="btn btn-danger" style="background-color: #ff5733; border: none; font-size: 1.2rem; padding: 10px 20px;">Editar Perfil</a>
-                    </div>
+                    <h5 class="card-title text-center" th:text="#{form.usuario.legend.general}" style="color: #c0392b; font-family: 'Montserrat', cursive; font-size: 1.8rem;"></h5>
+                    <p class="card-text" style="font-size: 1.2rem;"><strong th:text="#{form.usuario.nombre}">Nombre:</strong> <span th:text="${nombre}"></span></p>
+                    <p class="card-text" style="font-size: 1.2rem;"><strong th:text="#{form.usuario.apellidos}">Apellidos:</strong> <span th:text="${apellidos}"></span></p>
+                    <p class="card-text" style="font-size: 1.2rem;"><strong th:text="#{form.usuario.correo}">Correo:</strong> <span th:text="${correo}"></span></p>
+                    <p class="card-text" style="font-size: 1.2rem;"><strong th:text="#{form.usuario.numero}">Número:</strong> <span th:text="${numero}"></span></p>
+                    <p class="card-text" style="font-size: 1.2rem;"><strong th:text="#{form.usuario.cumpleanos}">Cumpleaños:</strong> <span th:text="${cumpleanos}"></span></p>
                 </div>
             </div>
         </main>

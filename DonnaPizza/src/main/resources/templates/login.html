@@ -31,7 +31,7 @@
             <div class="contenedor position-relative rounded-5 overflow-hidden bg-light shadow-lg p-3 rounded" id="contenedor">
                 <div class="form-contenedor crear-cuenta position-absolute">
                     <form class="d-flex justify-content-center align-items-center flex-column px-4" th:action="@{/dataFormRegistro}" method="POST" th:object="${usuario}">
-                        <h1>Create una Cuenta</h1>
+                        <h1 th:text="#{form.usuario.legend.crear}"></h1>
                         <div class="social-iconos my-2">
                             <a href="#" class="iconos mx-2 justify-content-center align-items-center">
                                 <i class="fa-brands fa-google-plus-g"></i>
@@ -43,18 +43,18 @@
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
                         </div>
-                        <input class="my-1" type="text" name="nombre" id="nombre" th:value="*{nombre}" placeholder="Nombre">
-                        <input class="my-1" type="text" name="apellidos" id="apellidos" th:value="*{apellidos}" placeholder="Apellidos">
-                        <input class="my-1" type="email" name="correo" id="correo" th:value="*{correo}" placeholder="Correo Electronico">
-                        <input class="my-1" type="text" name="numero" id="numero" th:value="*{numero}" placeholder="Número de teléfono">
-                        <input class="my-1" type="date" name="cumpleanos" id="cumpleanos" th:value="*{cumpleanos}" placeholder="Fecha de Nacimiento">
-                        <input class="my-1" type="password" name="contrasena" id="password" th:value="*{contrasena}" placeholder="Contraseña">
-                        <button type="submit" class="btn btn-login-register border px-3 py-2 my-2" name="registro">Registrarse</button>
+                        <input class="my-1" type="text" name="nombre" id="nombre" th:placeholder="#{form.usuario.nombre}">
+                        <input class="my-1" type="text" name="apellidos" id="apellidos" th:placeholder="#{form.usuario.apellidos}">
+                        <input class="my-1" type="email" name="correo" id="correo" th:placeholder="#{form.usuario.correo}">
+                        <input class="my-1" type="text" name="numero" id="numero" th:placeholder="#{form.usuario.numero}">
+                        <input class="my-1" type="date" name="cumpleanos" id="cumpleanos" th:placeholder="#{form.usuario.cumpleanos}">
+                        <input class="my-1" type="password" name="contrasena" id="contrasena" th:placeholder="#{form.usuario.contrasena}">
+                        <button type="submit" class="btn btn-login-register border px-3 py-2 my-2" name="registro" th:text="#{form.boton.registrar}"></button>
                     </form>
                 </div>
                 <div class="form-contenedor position-absolute iniciar-sesion">
                     <form class="d-flex justify-content-center align-items-center flex-column px-4" action="#" method="POST">
-                        <h1>Inicia Sesion</h1>
+                        <h1 th:text="#{form.usuario.legend.iniciar}"></h1>
                         <div class="social-iconos my-2">
                             <a href="#" class="iconos mx-2 justify-content-center align-items-center">
                                 <i class="fa-brands fa-google-plus-g"></i>
@@ -66,27 +66,32 @@
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
                         </div>
-                        <input class="my-1" type="email" name="correo" placeholder="Ingresa tu correo">
-                        <input class="my-1" type="password" name="password" placeholder="Contraseña">
+                        <input class="my-1" type="email" name="correo" th:value="*{correo}" th:placeholder="#{form.usuario.ingresar.correo}">
+                        <input class="my-1" type="password" name="contrasena" th:value="*{contrasena}" th:placeholder="#{form.usuario.contrasena}">
                         <a href="#" class="my-3">Olvidaste tu contraseña?</a>
-                        <button type="submit" class="btn btn-login-register border px-3 py-2" name="registro">Iniciar Sesion</button>
+                        <button type="submit" class="btn btn-login-register border px-3 py-2" th:text="#{form.boton.iniciar}" name="iniciar"></button>
                     </form>
                 </div>
                 <div class="cambiar-contenedor position-absolute overflow-hidden">
                     <div class="cambiar">
                         <div class="cambiar-panel cambiar-izquierda d-flex justify-content-center align-items-center flex-column position-absolute">
                             <h1>Donna Pizza</h1>
-                            <p>Ingresa todos tus datos correspondientes</p>
-                            <button class="ocultar btn btn-cambio border px-3 py-2" id="login">Iniciar Sesion</button>
+                            <p th:text="#{form.usuario.legend.subregistrar}"></p>
+                            <button class="ocultar btn btn-cambio border px-3 py-2" th:text="#{form.boton.iniciar}" id="login"></button>
                         </div>
                         <div class="cambiar-panel cambiar-derecha d-flex justify-content-center align-items-center flex-column position-absolute">
                             <h1>Donna Pizza</h1>
-                            <p>Registra todos tus datos!</p>
-                            <button class="ocultar btn btn-cambio border px-3 py-2" id="register">Registrarse</button>
+                            <p th:text="#{form.usuario.legend.subiniciar}"></p>
+                            <button class="ocultar btn btn-cambio border px-3 py-2" th:text="#{form.boton.registrar}" id="register"></button>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="language-links text-center my-3">
+                <a th:href="@{/changeLanguage(lang='en')}" th:text="#{idioma.ingles}" class="btn btn-danger mx-2"></a>
+                <a th:href="@{/changeLanguage(lang='es')}" th:text="#{idioma.castellano}" class="btn btn-danger mx-2"></a>
+            </div>
+
         </main>
         <!--Fin Main-->
         <!--Footer-->
@@ -101,7 +106,7 @@
             const contenedor = document.getElementById('contenedor');
 
             // Eventos para cambiar entre registro e inicio de sesión
-            registerButton.addEventListener('click', () => {   
+            registerButton.addEventListener('click', () => {
                 contenedor.classList.add('active');
             });
 
@@ -110,5 +115,5 @@
             });
         </script>
     </body>
-    
+
 </html>

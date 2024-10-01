@@ -2,8 +2,7 @@ package com.example.DonnaPizza.controladores;
 
 import com.example.DonnaPizza.Model.ContactoDp;
 import com.example.DonnaPizza.DAO.ContactoDAO;
-import com.example.DonnaPizza.DAO.sugerenciasDAO;
-import com.example.DonnaPizza.Model.sugerencias;
+
 import jakarta.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
 import org.springframework.stereotype.Controller;

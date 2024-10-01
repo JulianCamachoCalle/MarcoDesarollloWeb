@@ -1,6 +1,6 @@
-package com.example.pruebavalidar.DAO;
+package com.example.DonaPizza.DAO;
 
-import com.example.pruebavalidar.javaentity.ContactoDp;
+import com.example.DonaPizza.javaentity.ContactoDp;
 import java.util.ArrayList;
 
 

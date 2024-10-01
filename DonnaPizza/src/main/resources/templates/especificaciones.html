@@ -71,7 +71,7 @@
     <div id="cart-container" class="container mt-5" style="display: none;">
         <h4>Carrito de Compras</h4>
         <ul id="cart-items" class="list-group"></ul>
-        <button class="btn btn-success mt-3">Proceder al Pago</button>
+        <a th:href="@{/fromclient}" class="btn btn-success mt-3">Proceder al Pago</a>
     </div>
          <!--Footer-->
         <div th:replace="fragments/footer :: footer"></div>

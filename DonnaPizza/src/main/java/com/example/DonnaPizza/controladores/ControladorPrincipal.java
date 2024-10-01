@@ -29,6 +29,7 @@ public class ControladorPrincipal {
     public String index(Model model) {
         return "index";
     }
+    
 
     ContactoDAO objCont = new ContactoDAO();
 
@@ -147,4 +148,10 @@ public class ControladorPrincipal {
         model.addAttribute("direccion", direccion);
         return "client";
     }
+    
+    @GetMapping("/especificaciones")
+    public String especificaciones(Model model) {
+        return "especificaciones";
+    }
+    
 }

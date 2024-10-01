@@ -93,25 +93,26 @@
             </div>
             <!--Fin Header-->
         <h1>Lista de Sugerencias</h1>
-        <table border="3">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Email</th>
-                    <th>Descripcion</th>
-                </tr>  
-            </thead>
-            <tbody>
-                <tr th:each="objSug : ${listaA}">
 
-                    <td th:text="${objSug.nom}"></td>
-                    <td th:text="${objSug.email}"></td>
-                    <td th:text="${objSug.descrip}"></td>
-                </tr>
-            </tbody>
-
-
-        </table>
+        <div class="info">
+            <span class="label" th:text="#{from.sugerencia.nombresugerencia}">Nombre</span>
+            <span class="value" th:text="${nombre}"></span>
+        </div>
+        
+         <div class="info">
+            <span class="label" th:text="#{from.sugerencia.emailsugerencia}">Email</span>
+            <span class="value" th:text="${email}"></span>
+        </div>
+        
+         <div class="info">
+            <span class="label" th:text="#{from.sugerencia.descripcionsugerencia}">Descripcion</span>
+            <span class="value" th:text="${descripcion}"></span>
+        </div>
+        
+        
+        
+        
+        
              <!--Footer-->
         <div th:replace="fragments/footer :: footer"></div>
         <!--Fin Footer-->

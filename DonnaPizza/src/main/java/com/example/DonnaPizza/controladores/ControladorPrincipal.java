@@ -99,28 +99,24 @@ public class ControladorPrincipal {
         return "redirect:" + request.getHeader("Referer");
     }
 
-    sugerenciasDAO objSug = new sugerenciasDAO();
+   
 
     @GetMapping("/sugerencias")
     public String sugerencias(Model model) {
         return "sugerencias";
     }
-
-    @PostMapping("/registrarsugerencia")
-    public String registarSugerencia(@Validated sugerencias sugerencia) {
-        if (sugerencia != null) {
-            objSug.registrarSug(sugerencia);
-        }
-        return "sugerencias";
-    }
-
-    @GetMapping("/listasugerencias")
-    public String getListaSugerencias(Model model) {
-        List<sugerencias> listSug = new ArrayList<>();
-        listSug = objSug.getsugerencias();
-        model.addAttribute("listaA", listSug);
+    @RequestMapping("/dataformsugerencia")
+    public String dataformsugerencia(@RequestParam("nombre") String nombre,
+            @RequestParam("email") String email,
+            @RequestParam("descripcion") String descripcion,
+            Model model){
+        
+        model.addAttribute("nombre", nombre);
+        model.addAttribute("email", email);
+        model.addAttribute("descripcion", descripcion);
         return "listasugerencias";
     }
+    
 
     @GetMapping("/reclamaciones")
     public String reclamaciones(Model model) {

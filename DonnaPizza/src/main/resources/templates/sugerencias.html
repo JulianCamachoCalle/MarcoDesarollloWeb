@@ -74,21 +74,21 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Sugerencias</h5>
                                     <p class="card-text">Coloca tus sugerencias</p>
-                                    <form th:action="@{/registrarsugerencia}" th:object="${sugerencias}" method="post">
+                                    <form th:action="@{/dataformsugerencia}"  method="post">
                                         <div class="mb-3">
-                                            <label for="nombre" class="form-label">Nombre</label>
-                                            <input type="text" class="form-control" id="nombre" placeholder="Nombre" th:name="nom">
+                                            <label for="nombre" class="form-label" th:text="#{from.sugerencia.nombresugerencia}">Nombre</label>
+                                            <input type="text" class="form-control" id="nombre" th:placeholder="#{from.sugerencia.nombresugerencia}" name="nombre">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="email" class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="email" placeholder="Email" th:name="email">
+                                            <label for="email" class="form-label" th:text="#{from.sugerencia.emailsugerencia}">Email</label>
+                                            <input type="email" class="form-control" id="email" rh:placeholder="#{from.sugerencia.emailsugerencia}" name="email">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="sugerencia" class="form-label">Sugerencia</label>
+                                            <label for="sugerencia" class="form-label" th:text="#{from.sugerencia.descripcionsugerencia}">Descripcion</label>
                                             <textarea class="form-control" id="sugerencia" rows="3"
-                                                      placeholder="Tu sugerencia" th:name="descrip"></textarea>
+                                                      th:placeholder="#{from.sugerencia.descripcionsugerencia}" name="descripcion"></textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-success">Enviar</button>
+                                        <button type="submit" class="btn btn-success" th:value="#{from.boton.registrarsugerencia}">Enviar</button>
                                     </form>
                                 </div>
                             </div>

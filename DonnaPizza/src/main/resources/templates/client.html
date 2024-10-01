@@ -35,8 +35,14 @@
                     <p class="card-text" style="font-size: 1.2rem;"><strong th:text="#{from.client.correo}">Correo:</strong> <span th:text="${correo}"></span></p>
                     <p class="card-text" style="font-size: 1.2rem;"><strong th:text="#{from.client.numero}">Número:</strong> <span th:text="${numero}"></span></p>
                     <p class="card-text" style="font-size: 1.2rem;"><strong th:text="#{from.client.direccion}">direccion:</strong> <span th:text="${direccion}"></span></p>
+                <div id="cart-summary" class="mt-4">
+        <h4>Resumen del Pedido</h4>
+        <ul id="cart-items" class="list-group"></ul>
+    </div>
                 </div>
+                
             </div>
+            
         </main>
 
 
@@ -47,5 +53,44 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+        
+        <script>
+// Cargar y mostrar el carrito
+function loadCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsList = document.getElementById('cart-items');
+    
+    cartItemsList.innerHTML = '';
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.className = "list-group-item";
+        li.textContent = `${item.quantity} x ${item.name} (${item.size}) - ${item.price}`;
+        cartItemsList.appendChild(li);
+    });
+}
+
+window.onload = function() {
+    loadCart();
+}
+
+// Manejo del formulario
+document.getElementById('client-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // Obtener datos del formulario
+    const name = document.getElementById('name').value;
+    const address = document.getElementById('address').value;
+    const phone = document.getElementById('phone').value;
+    
+    // Aquí puedes manejar la lógica para enviar el pedido al servidor
+    // Por ejemplo, puedes usar AJAX o redirigir a una página de confirmación.
+    console.log("Pedido Confirmado", { name, address, phone });
+    
+    // Limpiar el carrito después de enviar el pedido
+    localStorage.removeItem('cart');
+    
+    alert('Pedido confirmado. ¡Gracias por tu compra!');
+    window.location.href = 'thankyou.html'; // Puedes crear una página de agradecimiento.
+});</script>
     </body>
 </html>

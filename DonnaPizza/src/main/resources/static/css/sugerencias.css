@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../img/fondo-principal.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.39) 68%, rgba(102, 102, 102, 0) 100%);
+}
+
+.collapse {
+    justify-content: center;
+}
+
+.navbar-nav .nav-item .nav-link {
+    margin: 10px 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.active {
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+#container-contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    padding-top: 40px;
+    /* Ajuste para evitar la superposición con la barra de navegación */
+}
+.card{
+    margin: 0 auto;
+    background-color: chocolate;
+    border: solid white;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+}
+.card1{
+    background-color: rgba(0, 0, 0, 0.5); /* Blanco con 50% de transparencia */
+    border: solid rgba(0, 0, 0, 0.3); /* Borde con transparencia */
+    padding: 20px;
+    border-radius: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    width: 400px;
+    
+}

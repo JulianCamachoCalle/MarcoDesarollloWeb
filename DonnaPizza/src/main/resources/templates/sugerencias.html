@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -11,33 +11,11 @@
 </head>
 
 <body>
-    <nav class="navbar fixed-top navbar-expand-md">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Carta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Membresia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Locales</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Iniciar Sesión</a>
-                    </li>
-                </ul>
+          <!--Header-->
+        <div class="container-fluid d-flex justify-content-center align-items-center flex-column p-0" id="container-locales">
+            <div th:replace="fragments/header :: header">
             </div>
-        </div>
-    </nav>
+            <!--Fin Header-->
        <div class="container-fluid" id="container-contenido" style="padding-top: 80px;">
         <div class="container">
             <div class="row">
@@ -96,19 +74,19 @@
                         <div class="card-body">
                             <h5 class="card-title">Sugerencias</h5>
                             <p class="card-text">Coloca tus sugerencias</p>
-                            <form>
+                            <form th:action="@{/registrarsugerencia}" th:object="${sugerencias}" method="post">
                                 <div class="mb-3">
                                     <label for="nombre" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" th:name="nom">
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                    <input type="email" class="form-control" id="email" placeholder="Email" th:name="email">
                                 </div>
                                 <div class="mb-3">
                                     <label for="sugerencia" class="form-label">Sugerencia</label>
                                     <textarea class="form-control" id="sugerencia" rows="3"
-                                        placeholder="Tu sugerencia"></textarea>
+                                        placeholder="Tu sugerencia" th:name="descrip"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-success">Enviar</button>
                             </form>
@@ -118,6 +96,9 @@
             </div>
         </div>
     </div>
+             <!--Footer-->
+        <div th:replace="fragments/footer :: footer"></div>
+        <!--Fin Footer-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

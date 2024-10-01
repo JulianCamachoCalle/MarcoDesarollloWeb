@@ -1,4 +1,4 @@
-package com.example.DonaPizza.Model;
+package com.example.DonnaPizza.Model;
 
 public class ContactoDp {
     private String nombre, email,telefono;

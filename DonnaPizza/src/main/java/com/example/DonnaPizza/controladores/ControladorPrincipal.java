@@ -1,6 +1,6 @@
 package com.example.DonnaPizza.controladores;
 
-import com.example.DonaPizza.Model.ContactoDp;
+import com.example.DonnaPizza.Model.ContactoDp;
 import com.example.DonnaPizza.DAO.ContactoDAO;
 import com.example.DonnaPizza.DAO.sugerenciasDAO;
 import com.example.DonnaPizza.Model.sugerencias;

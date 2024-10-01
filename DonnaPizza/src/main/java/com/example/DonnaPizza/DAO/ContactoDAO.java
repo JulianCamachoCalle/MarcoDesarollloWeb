@@ -1,6 +1,6 @@
-package com.example.DonaPizza.DAO;
+package com.example.DonnaPizza.DAO;
 
-import com.example.DonaPizza.javaentity.ContactoDp;
+import com.example.DonaPizza.Model.ContactoDp;
 import java.util.ArrayList;
 
 

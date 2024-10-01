@@ -1,131 +1,105 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donna Pizza</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="reclamaciones.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Donna Pizza</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/reclamaciones.css">
+    </head>
 
-<body>
-    <div class="container-fluid" id="container-principal">
-        <nav class="navbar navbar-expand-md">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Carta</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Membresia</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Locales</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Iniciar Sesión</a>
-                        </li>
-                    </ul>
-                </div>
+    <body>
+        <!--Header-->
+        <div class="container-fluid d-flex justify-content-center align-items-center flex-column p-0" id="container-principal">
+            <div th:replace="fragments/header :: header">
             </div>
-        </nav>
-    </div>
-    <div class="container-fluid py-4" id="container-contenido">
-        <div class="container">
-            <div class="row">
-                <div class="col-7 align-self-center mx-auto">
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title">Libro de Reclamaciones</h2>
-                            <h5 class="card-text">Identificación del consumidor reclamante</h5>
-                            <form>
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="nombre">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="domicilio" class="form-label">Domicilio</label>
-                                    <input type="text" class="form-control" id="domicilio">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="dni" class="form-label">DNI/CE</label>
-                                    <input type="number" class="form-control" id="dni">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="telefono" class="form-label">Teléfono</label>
-                                    <input type="tel" class="form-control" id="telefono">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="correo" class="form-label">Correo Electrónico</label>
-                                    <input type="email" class="form-control" id="correo">
-                                </div>
-                            </form>
-                            <h5 class="card-text">Identificación del bien contratado</h5>
-                            <form>
-                                <div class="mb-3">  
-                                    <label for="bien-tipo" class="form-label">Tipo de Bien</label>
-                                    <select class="form-select" aria-label="Default select example" id="bien-tipo">
-                                        <option selected>Seleccionar tipo de bien</option>
-                                        <option value="producto">Producto</option>
-                                        <option value="servicio">Servicio</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="monto-reclamado" class="form-label">Monto Reclamado</label>
-                                    <input type="number" class="form-control" id="monto-reclamado">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="reclamo-descripcion" class="form-label">Descripción</label>
-                                    <input type="text" class="form-control" id="reclamo-descripcion">
-                                </div>
-                            </form>
-                            <h5 class="card-text">Detalle de la reclamación y pedido del consumidor</h5>
-                            <form>
-                                <div class="mb-3">  
-                                    <label for="reclamo-tipo" class="form-label">Tipo de Reclamación</label>
-                                    <select class="form-select" aria-label="Default select example" id="reclamo-tipo">
-                                        <option selected>Seleccionar tipo de reclamación</option>
-                                        <option value="reclamo">Reclamo</option>
-                                        <option value="queja">Queja</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="reclamo-detalle" class="form-label">Detalle</label>
-                                    <textarea class="form-control" id="reclamo-detalle" rows="3" placeholder="Ingrese el detalle de su reclamación"></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="reclamo-pedido" class="form-label">Pedido</label>
-                                    <textarea class="form-control" id="reclamo-pedido" rows="3" placeholder="Ingrese el detalle de su pedido"></textarea>
-                                </div>
-                                <div class="d-grid gap-2 col-3 mx-auto">
-                                    <button class="btn btn-danger" type="button">ENVIAR HOJA DE RECLAMACIÓN</button>
-                                  </div>
-                            </form>
+        </div>
+        <!--Fin Header-->
+        <div class="container-fluid py-4" id="container-contenido">
+            <div class="container">
+                <div class="row">
+                    <div class="col-7 align-self-center mx-auto">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Libro de Reclamaciones</h2>
+                                <h5 class="card-text">Identificación del consumidor reclamante</h5>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="nombre" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="nombre">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="domicilio" class="form-label">Domicilio</label>
+                                        <input type="text" class="form-control" id="domicilio">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="dni" class="form-label">DNI/CE</label>
+                                        <input type="number" class="form-control" id="dni">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="telefono" class="form-label">Teléfono</label>
+                                        <input type="tel" class="form-control" id="telefono">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="correo" class="form-label">Correo Electrónico</label>
+                                        <input type="email" class="form-control" id="correo">
+                                    </div>
+                                </form>
+                                <h5 class="card-text">Identificación del bien contratado</h5>
+                                <form>
+                                    <div class="mb-3">  
+                                        <label for="bien-tipo" class="form-label">Tipo de Bien</label>
+                                        <select class="form-select" aria-label="Default select example" id="bien-tipo">
+                                            <option selected>Seleccionar tipo de bien</option>
+                                            <option value="producto">Producto</option>
+                                            <option value="servicio">Servicio</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="monto-reclamado" class="form-label">Monto Reclamado</label>
+                                        <input type="number" class="form-control" id="monto-reclamado">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="reclamo-descripcion" class="form-label">Descripción</label>
+                                        <input type="text" class="form-control" id="reclamo-descripcion">
+                                    </div>
+                                </form>
+                                <h5 class="card-text">Detalle de la reclamación y pedido del consumidor</h5>
+                                <form>
+                                    <div class="mb-3">  
+                                        <label for="reclamo-tipo" class="form-label">Tipo de Reclamación</label>
+                                        <select class="form-select" aria-label="Default select example" id="reclamo-tipo">
+                                            <option selected>Seleccionar tipo de reclamación</option>
+                                            <option value="reclamo">Reclamo</option>
+                                            <option value="queja">Queja</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="reclamo-detalle" class="form-label">Detalle</label>
+                                        <textarea class="form-control" id="reclamo-detalle" rows="3" placeholder="Ingrese el detalle de su reclamación"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="reclamo-pedido" class="form-label">Pedido</label>
+                                        <textarea class="form-control" id="reclamo-pedido" rows="3" placeholder="Ingrese el detalle de su pedido"></textarea>
+                                    </div>
+                                    <div class="d-grid gap-2 col-3 mx-auto">
+                                        <button class="btn btn-success" type="button">ENVIAR HOJA DE RECLAMACIÓN</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        <!--Footer-->
+        <div th:replace="fragments/footer :: footer"></div>
+        <!--Fin Footer-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-emoji-heart-eyes"
-        viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-        <path
-            d="M11.315 10.014a.5.5 0 0 1 .548.736A4.498 4.498 0 0 1 7.965 13a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242.63 0 1.46-.118 2.152-.242a26.58 26.58 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zM4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434zm6.488 0c1.398-.864 3.544 1.838-.952 3.434-3.067-3.554.19-4.858.952-3.434z" />
-    </svg>
-</body>
+    </body>
 
 </html>

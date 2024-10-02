@@ -57,3 +57,70 @@ body {
     width: 400px;
 
 }
+
+ h1 {
+            background-color: #d9534f;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-size: 2.5em;
+            border-bottom: 5px solid #c9302c;
+        }
+
+        .info {
+            background-color: #fff;
+            margin: 20px auto;
+            padding: 15px;
+            border-radius: 10px;
+            width: 80%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #d9534f;
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        .value {
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        /* Estilo especial que recuerda a una pizzería */
+        .info:nth-child(even) {
+            background-color: #f9f6f2;
+        }
+
+        body::before {
+            content: '';
+            background-image: url('https://www.example.com/path/to/your/pizza-background.jpg'); /* Añadir fondo relacionado con pizza */
+            opacity: 0.1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        /* Botones temáticos */
+        button {
+            background-color: #d9534f;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+
+        button:hover {
+            background-color: #c9302c;
+        }

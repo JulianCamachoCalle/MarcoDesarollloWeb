@@ -1,17 +1,12 @@
 package com.example.DonnaPizza.controladores;
 
-import com.example.DonnaPizza.Model.ContactoDp;
-import com.example.DonnaPizza.DAO.ContactoDAO;
+
 
 import jakarta.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.validation.annotation.Validated;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,26 +25,24 @@ public class ControladorPrincipal {
     }
     
 
-    ContactoDAO objCont = new ContactoDAO();
+    
 
     @GetMapping({"/contacto"})
     public String contacto(Model model) {
         return "contactopizza";
     }
 
-    @PostMapping("/registrar")
-    public String registarContacto(@Validated ContactoDp contacto) {
-        if (contacto != null) {
-            objCont.registrarCont(contacto);
-        }
-        return "contactopizza";
-    }
+ 
 
-    @GetMapping("/listacontacto")
-    public String getLista(Model model) {
-        List<ContactoDp> listCont = new ArrayList<>();
-        listCont = objCont.getcontacto();
-        model.addAttribute("listaA", listCont);
+   @RequestMapping("/dataformcontacto")
+    public String dataformcontacto(@RequestParam("nombre") String nombre,
+            @RequestParam("email") String email,
+            @RequestParam("telefono") String telefono,
+            Model model){
+        
+        model.addAttribute("nombre", nombre);
+        model.addAttribute("email", email);
+        model.addAttribute("telefono", telefono);
         return "listacontactos";
     }
 

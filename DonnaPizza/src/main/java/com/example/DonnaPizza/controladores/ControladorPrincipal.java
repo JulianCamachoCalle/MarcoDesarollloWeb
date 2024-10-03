@@ -29,11 +29,8 @@ public class ControladorPrincipal {
 
     @GetMapping({"/contacto"})
     public String contacto(Model model) {
-        return "contactopizza";
+        return "contacto";
     }
-
- 
-
    @RequestMapping("/dataformcontacto")
     public String dataformcontacto(@RequestParam("nombre") String nombre,
             @RequestParam("email") String email,

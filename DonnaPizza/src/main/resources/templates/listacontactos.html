@@ -23,25 +23,66 @@
        
      
  <!--Main-->
-      <main id="main" class="main d-flex justify-content-center align-items-center flex-column vh-100">
-    <div class="card" style="width: 60rem; border: 3px solid royalblue; border-radius: 30px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);">
-        <div class="card-body" style="background-color: lightcyan; border-radius: 30px; padding: 2rem;">
-            <h5 class="card-title text-center" th:text="#{form.ContactoDp.legend.contacto}" style="color: royalblue; font-family: 'Montserrat', cursive; font-size: 2.2rem; margin-bottom: 1.5rem;"></h5>
-            <p class="card-text" style="font-size: 1.4rem; margin-bottom: 1rem;">
+    <main id="main" class="main d-flex justify-content-center align-items-center flex-column vh-100">
+    <div class="card" style="border: 3px solid royalblue; border-radius: 30px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);">
+        <div class="card-body" style="background-color: lightcyan; border-radius: 30px;">
+            <h5 class="card-title text-center" th:text="#{form.ContactoDp.legend.contacto}" style="color: royalblue; font-family: 'Montserrat', cursive; font-size: 1.8rem;"></h5>
+            <p class="card-text">
                 <strong th:text="#{from.ContactoDp.nombrecontacto}">Nombre:</strong> 
                 <span th:text="${nombre}"></span>
             </p>
-            <p class="card-text" style="font-size: 1.4rem; margin-bottom: 1rem;">
+            <p class="card-text">
                 <strong th:text="#{from.ContactoDp.emailcontacto}">Apellidos:</strong> 
                 <span th:text="${email}"></span>
             </p>
-            <p class="card-text" style="font-size: 1.4rem; margin-bottom: 1rem;">
+            <p class="card-text">
                 <strong th:text="#{from.ContactoDp.telefonocontacto}">Teléfono:</strong> 
                 <span th:text="${telefono}"></span>
             </p>
         </div>
     </div>
 </main>
+
+<style>
+    /* Contenedor adaptable */
+    .card {
+        width: 100%;               /* Se adapta al ancho del contenedor */
+        max-width: 60rem;           /* Máximo ancho en pantallas grandes */
+        padding: 2rem;              /* Espaciado interno */
+        margin: 0 1rem;             /* Márgenes para evitar que quede pegado */
+    }
+
+    /* Ajustes para pantallas más pequeñas */
+    @media (max-width: 768px) {
+        .card {
+            max-width: 90%;         /* Se ajusta para tabletas y pantallas medianas */
+            padding: 1.5rem;
+        }
+
+        .card-text {
+            font-size: 1.2rem;      /* Tamaño de texto menor en pantallas medianas */
+        }
+
+        h5.card-title {
+            font-size: 1.6rem;      /* Ajusta el tamaño del título */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .card {
+            max-width: 100%;        /* Para pantallas pequeñas, ocupa todo el ancho */
+            padding: 1rem;
+        }
+
+        .card-text {
+            font-size: 1rem;        /* Texto más pequeño para pantallas pequeñas */
+        }
+
+        h5.card-title {
+            font-size: 1.4rem;      /* Título más pequeño en pantallas pequeñas */
+        }
+    }
+</style>
         <!--Fin Main-->
         
         <!--Footer-->

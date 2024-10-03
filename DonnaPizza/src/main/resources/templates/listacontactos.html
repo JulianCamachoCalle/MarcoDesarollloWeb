@@ -4,27 +4,31 @@
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
     </head>
     <body>
-        <h1> Lista de Contacto </h1>
-        <table border="3">
-       <h1>Lista de Contactos</h1>
-                <div class="info">
-                    <span class="label" th:text="#{from.contacto.nombrecontacto}">Nombre</span>
-                    <span class="value" th:text="${nombre}"></span>
-                </div>
+       
+    <h1> Lista de Contacto </h1>
+       
+     
+ <!--Main-->
+        <main id="main" class="main d-flex justify-content-center align-items-center flex-column vh-100">
+            <div class="card" style="width: 24rem; border: 2px solid blue; border-radius: 25px;">
+                <div class="card-body" style="background-color: lightcyan; border-radius: 25px;">
+                    <h5 class="card-title text-center" th:text="#{form.ContactoDp.legend.contacto}" style="color: blue; font-family: 'Montserrat', cursive; font-size: 1.8rem;"></h5>
+                    <p class="card-text" style="font-size: 1.2rem;"><strong th:text="#{from.ContactoDp.nombrecontacto}">Nombre:</strong> <span th:text="${nombre}"></span></p>
+                    <p class="card-text" style="font-size: 1.2rem;"><strong th:text="#{from.ContactoDp.emailcontacto}">Apellidos:</strong> <span th:text="${email}"></span></p>
+                    <p class="card-text" style="font-size: 1.2rem;"><strong th:text="#{from.ContactoDp.telefonocontacto}">Telefono:</strong> <span th:text="${telefono}"></span></p>
 
-                <div class="info">
-                    <span class="label" th:text="#{from.contacto.emailcontacto}">Email</span>
-                    <span class="value" th:text="${email}"></span>
+                
                 </div>
+                
+            </div>
+            
+        </main>
 
-                <div class="info">
-                    <span class="label" th:text="#{from.contacto.telefonocontacto}">Telefono</span>
-                    <span class="value" th:text="${telefono}"></span>
-                </div>
-         
+
+        <!--Fin Main-->
     </body>
 </html>

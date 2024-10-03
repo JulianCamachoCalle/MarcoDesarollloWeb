@@ -23,21 +23,25 @@
        
      
  <!--Main-->
-        <main id="main" class="main d-flex justify-content-center align-items-center flex-column vh-100">
-            <div class="card" style="width: 50rem; border: 2px solid blue; border-radius: 25px;">
-                <div class="card-body" style="background-color: lightcyan; border-radius: 25px;">
-                    <h5 class="card-title text-center" th:text="#{form.ContactoDp.legend.contacto}" style="color: blue; font-family: 'Montserrat', cursive; font-size: 1.8rem;"></h5>
-                    <p class="card-text" style="font-size: 1.2rem;"><strong th:text="#{from.ContactoDp.nombrecontacto}">Nombre:</strong> <span th:text="${nombre}"></span></p>
-                    <p class="card-text" style="font-size: 1.2rem;"><strong th:text="#{from.ContactoDp.emailcontacto}">Apellidos:</strong> <span th:text="${email}"></span></p>
-                    <p class="card-text" style="font-size: 1.2rem;"><strong th:text="#{from.ContactoDp.telefonocontacto}">Telefono:</strong> <span th:text="${telefono}"></span></p>
-
-                
-                </div>
-                
-            </div>
-            
-        </main>
-
+      <main id="main" class="main d-flex justify-content-center align-items-center flex-column vh-100">
+    <div class="card" style="width: 60rem; border: 3px solid royalblue; border-radius: 30px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);">
+        <div class="card-body" style="background-color: lightcyan; border-radius: 30px; padding: 2rem;">
+            <h5 class="card-title text-center" th:text="#{form.ContactoDp.legend.contacto}" style="color: royalblue; font-family: 'Montserrat', cursive; font-size: 2.2rem; margin-bottom: 1.5rem;"></h5>
+            <p class="card-text" style="font-size: 1.4rem; margin-bottom: 1rem;">
+                <strong th:text="#{from.ContactoDp.nombrecontacto}">Nombre:</strong> 
+                <span th:text="${nombre}"></span>
+            </p>
+            <p class="card-text" style="font-size: 1.4rem; margin-bottom: 1rem;">
+                <strong th:text="#{from.ContactoDp.emailcontacto}">Apellidos:</strong> 
+                <span th:text="${email}"></span>
+            </p>
+            <p class="card-text" style="font-size: 1.4rem; margin-bottom: 1rem;">
+                <strong th:text="#{from.ContactoDp.telefonocontacto}">Teléfono:</strong> 
+                <span th:text="${telefono}"></span>
+            </p>
+        </div>
+    </div>
+</main>
         <!--Fin Main-->
         
         <!--Footer-->

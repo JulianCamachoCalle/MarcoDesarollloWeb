@@ -24,5 +24,5 @@ public class Cliente {
     private String apellido;
     private String email;
     private String telefono;
-    private String direccion;
+    private String direccion; 
 }

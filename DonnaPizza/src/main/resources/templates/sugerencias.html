@@ -73,22 +73,25 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Sugerencias</h5>
+                                    <!-- Muestra un mensaje de error si existe -->
+                                    <div th:if="${errorMessage}" class="alert alert-danger">
+                                        <p th:text="${errorMessage}"></p>
+                                    </div>
                                     <p class="card-text">Coloca tus sugerencias</p>
-                                    <form th:action="@{/dataformsugerencia}"  method="post">
+                                    <form th:action="@{/registrarsugerencia}" th:object="${sugerencias}" method="post">
                                         <div class="mb-3">
-                                            <label for="nombre" class="form-label" th:text="#{from.sugerencia.nombresugerencia}">Nombre</label>
-                                            <input type="text" class="form-control" id="nombre" th:placeholder="#{from.sugerencia.nombresugerencia}" name="nombre">
+                                            <label for="nombre" class="form-label" >Nombre</label>
+                                            <input type="text" id="nombre" th:field="*{nom}" class="form-control" placeholder="Nombre" required />
                                         </div>
                                         <div class="mb-3">
-                                            <label for="email" class="form-label" th:text="#{from.sugerencia.emailsugerencia}">Email</label>
-                                            <input type="email" class="form-control" id="email" th:placeholder="#{from.sugerencia.emailsugerencia}" name="email">
+                                            <label for="email" class="form-label" >Email</label>
+                                            <input type="email" id="email" th:field="*{email}" class="form-control" placeholder="Correo electrónico" required />
                                         </div>
                                         <div class="mb-3">
-                                            <label for="sugerencia" class="form-label" th:text="#{from.sugerencia.descripcionsugerencia}">Descripcion</label>
-                                            <textarea class="form-control" id="sugerencia" rows="3"
-                                                      th:placeholder="#{from.sugerencia.descripcionsugerencia}" name="descripcion"></textarea>
+                                            <label for="sugerencia" class="form-label" >Descripcion</label>
+                                            <input type="text" id="descripcion" th:field="*{descrip}" class="form-control" placeholder="Descripcion" required />
                                         </div>
-                                        <button type="submit" class="btn btn-success" th:value="#{from.boton.registrarsugerencia}">Enviar</button>
+                                        <button type="submit" class="btn btn-success">Enviar</button>
                                     </form>
                                 </div>
                             </div>

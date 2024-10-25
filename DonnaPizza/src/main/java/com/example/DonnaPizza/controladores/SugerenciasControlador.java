@@ -13,7 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class SugerenciasControlador {
@@ -45,7 +47,17 @@ public class SugerenciasControlador {
             return "sugerencias";
         }
     }
+       @GetMapping("/getEdit/{sugerencias.cod_suge}")
+    public String editFormsugerencias(Model model, @PathVariable("cod_suge") Long id) {
+        sugerencias sugerencia = servicioSugerencias.get(id);
+        model.addAttribute("sugerencia", sugerencia);
+        return "sugerencias";
+    }
     
+    public String deleteFormsugerencias(Model model, @RequestParam("id") Long id) {
+        servicioSugerencias.delete(id);
+        return "redirect:/listasugerencias";
+    }
     
     
     

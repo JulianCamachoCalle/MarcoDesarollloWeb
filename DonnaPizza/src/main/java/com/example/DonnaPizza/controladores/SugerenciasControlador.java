@@ -50,7 +50,7 @@ public class SugerenciasControlador {
        @GetMapping("/getEdit/{cod_suge}")
     public String editFormsugerencias(Model model, @PathVariable("cod_suge") Long id) {
         sugerencias sugerencia = servicioSugerencias.get(id);
-        model.addAttribute("sugerencia", sugerencia);
+        model.addAttribute("sugerencias", sugerencia);
         return "sugerencias";
     }
     

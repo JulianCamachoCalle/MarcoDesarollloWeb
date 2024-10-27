@@ -1,42 +1,29 @@
 package com.example.DonnaPizza.Model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name="contacto")
 public class ContactoDp {
-    private String nombre, email,telefono;
-
-    public ContactoDp(String nombre, String email, String telefono) {
-        super();
-        this.nombre = nombre;
-        this.email = email;
-        this.telefono = telefono;
-    }
-
-    public ContactoDp() {
-        super();
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    private Long id_contactos ;
+    
+    private String nombre;
+    private String email;
+    private String telefono;
+    
+    
     
     
 }

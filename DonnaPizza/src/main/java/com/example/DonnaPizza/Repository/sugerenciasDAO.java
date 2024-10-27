@@ -7,10 +7,6 @@ package com.example.DonnaPizza.Repository;
 import com.example.DonnaPizza.Model.sugerencias;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-/**
- *
- * @author hp
- */
 public interface sugerenciasDAO extends JpaRepository<sugerencias, Long> {
     
 }

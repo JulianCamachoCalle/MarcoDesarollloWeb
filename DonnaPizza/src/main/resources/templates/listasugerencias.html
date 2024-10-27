@@ -39,9 +39,9 @@
                     <td th:text="${sugerencias.descrip}"></td>
                     <td>
                         <!-- Botón para editar -->
-                        <a th:href="@{'/getEdit/' + ${sugerencias.cod_suge}}" class="btn btn-warning btn-sm">Editar</a>
+                        <a th:href="@{'/getEditsugerencias/' + ${sugerencias.cod_suge}}" class="btn btn-warning btn-sm">Editar</a>
                         <!-- Botón para eliminar -->
-                        <a th:href="@{'/delete/' + ${sugerencias.cod_suge}}" class="btn btn-danger btn-sm"
+                        <a th:href="@{'/deletesugerencias/' + ${sugerencias.cod_suge}}" class="btn btn-danger btn-sm"
                            onclick="return confirm('¿Está seguro de eliminar este cliente?')">Eliminar</a>
                     </td>
                 </tr>

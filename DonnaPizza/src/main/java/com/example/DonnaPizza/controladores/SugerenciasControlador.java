@@ -47,13 +47,13 @@ public class SugerenciasControlador {
             return "sugerencias";
         }
     }
-       @GetMapping("/getEdit/{cod_suge}")
+       @GetMapping("/getEditsugerencias/{cod_suge}")
     public String editFormsugerencias(Model model, @PathVariable("cod_suge") Long id) {
         sugerencias sugerencia = servicioSugerencias.get(id);
         model.addAttribute("sugerencias", sugerencia);
         return "sugerencias";
     }
-    
+    @GetMapping("/deletesugerencias/{cod_suge}")
     public String deleteFormsugerencias(Model model, @RequestParam("id") Long id) {
         servicioSugerencias.delete(id);
         return "redirect:/listasugerencias";

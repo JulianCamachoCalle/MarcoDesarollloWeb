@@ -6,7 +6,7 @@
 }
 
 .card-img-top {
-    max-height: 12.5rem !important;
+    height: 12.5rem !important;
     border-radius: 25px 25px 0 0 !important;
 }
 

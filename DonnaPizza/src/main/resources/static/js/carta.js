@@ -15,7 +15,8 @@ function cargarPizzas() {
                             <div class="col-12 col-md-6 col-xl-4 mb-4 d-flex justify-content-center">
                                 <div class="card border border-0 bg-success mx-3 my-0"
                                      style="width: 21.875rem; height: 23.125rem;" id="plato">
-                                    <img src="/img/${pizza.imagen}.jpg" class="card-img-top img-fluid" alt="${pizza.nombre}">
+                                     <img src="/img/pizzas/${pizza.nombre}.jpg" class="card-img-top img-fluid" alt="${pizza.nombre}" 
+                                            onerror="this.onerror=null; this.src='/img/pizzas/predeterminada.jpg';">
                                     <div class="card-body d-flex justify-content-center align-items-center flex-column m-0 p-0">
                                         <h5 class="card-title text-center m-0 p-0" id="nombre-plato">${pizza.nombre}</h5>
                                         <p class="card-text text-center mb-1 mx-1 p-0" id="ingredientes-plato">${pizza.descripcion}</p>

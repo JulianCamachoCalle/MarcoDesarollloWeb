@@ -34,9 +34,9 @@
             <tbody>
                 <tr th:each="sugerencias : ${lista}">
                     <td th:text="${sugerencias.cod_suge}"></td>
-                    <td th:text="${sugerencias.nom}"></td>
+                    <td th:text="${sugerencias.nombre}"></td>
                     <td th:text="${sugerencias.email}"></td>
-                    <td th:text="${sugerencias.descrip}"></td>
+                    <td th:text="${sugerencias.descripcion}"></td>
                     <td>
                         <!-- Botón para editar -->
                         <a th:href="@{'/getEditsugerencias/' + ${sugerencias.cod_suge}}" class="btn btn-warning btn-sm">Editar</a>

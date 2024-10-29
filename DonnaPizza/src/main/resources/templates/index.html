@@ -140,21 +140,7 @@
                     <p class="text-left font-weight-bold mx-2" id="subtitulo-contacto">¿Tienes alguna pregunta o quieres hacer
                         un
                         pedido? ¡Estamos aquí para ayudarte! Escríbenos o llámanos, y con gusto te atenderemos.</p>
-                    <form id="consultaForm" class="row" th:action="@{/registrarContacto}" th:object="${contactos}" method="post">
-                        <div class="form-group col-lg-3 col-md-6 col-sm-12 mb-3" id="input-contacto">
-                            <input type="text" class="form-control p-2" id="nombre" th:field="*{nombre}"  placeholder="Nombre" required  name="nombre" >
-                        </div>
-                        <div class="form-group col-lg-3 col-md-6 col-sm-12 mb-3" id="input-contacto">
-                            <input type="email" class="form-control p-2" id="email" th:field="*{email}"  placeholder="Correo electrónico" required name="email"  >
-                        </div>
-                        <div class="form-group col-lg-3 col-md-6 col-sm-12 mb-3" id="input-contacto">
-                            <input type="text" class="form-control p-2" id="telefono" th:field="*{telefono}" placeholder="Teléfono" required name="telefono"  >
-                        </div>
-                        <div class="form-group col-lg-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center"
-                             id="input-contacto">
-                            <button type="submit" class="btn btn-danger p-2 w-100" id="boton-contacto" >Solicitar Ayuda</button>
-                        </div>
-                    </form>
+                    <a th:href="@{/formcontactos}" class="btn btn-success mb-3">Registrar Contactos</a>
                 </div>
             </div>
             <!--Fin Contacto-->

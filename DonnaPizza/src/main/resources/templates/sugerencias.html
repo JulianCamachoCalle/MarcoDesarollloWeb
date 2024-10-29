@@ -81,7 +81,7 @@
                                     <form th:action="@{/registrarsugerencia}" th:object="${sugerencias}" method="post">
                                         <div class="mb-3">
                                             <label for="nombre" class="form-label" >Nombre</label>
-                                            <input type="text" id="nombre" th:field="*{nom}" class="form-control" placeholder="Nombre" required />
+                                            <input type="text" id="nombre" th:field="*{nombre}" class="form-control" placeholder="Nombre" required />
                                         </div>
                                         <div class="mb-3">
                                             <label for="email" class="form-label" >Email</label>
@@ -89,7 +89,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="sugerencia" class="form-label" >Descripcion</label>
-                                            <input type="text" id="descripcion" th:field="*{descrip}" class="form-control" placeholder="Descripcion" required />
+                                            <input type="text" id="descripcion" th:field="*{descripcion}" class="form-control" placeholder="Descripcion" required />
                                         </div>
                                         <button type="submit" class="btn btn-success">Enviar</button>
                                     </form>

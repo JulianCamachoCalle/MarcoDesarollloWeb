@@ -9,22 +9,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table (name = "sugerencias")
-public class sugerencias {
+@Table(name = "contactos")
+public class Contactos {
+
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Long cod_suge;
-    
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_contactos;
+
     private String nombre;
     private String email;
-    private String descripcion;
-
-   
+    private String telefono;
 }

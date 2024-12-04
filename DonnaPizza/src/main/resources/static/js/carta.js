@@ -1,5 +1,5 @@
 function cargarPizzas() {
-    fetch('/getListPizzasJSON')
+    fetch('/pizzas/getListPizzasJSON')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error al obtener las pizzas');

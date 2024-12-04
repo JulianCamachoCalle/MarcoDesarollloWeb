@@ -1,10 +1,15 @@
 package com.example.DonnaPizza.controladores;
 
 
+import com.example.DonnaPizza.Model.User;
+import com.example.DonnaPizza.Services.ServicioUser;
+import com.example.DonnaPizza.Services.ServicioUserImpl;
 import jakarta.servlet.http.HttpServletRequest;
 
+import java.security.Principal;
 import java.time.LocalDate;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +21,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ControladorPrincipal {
+
+    private final ServicioUserImpl servicioUserImpl;
+
+    public ControladorPrincipal(ServicioUserImpl servicioUserImpl) {
+        this.servicioUserImpl = servicioUserImpl;
+    }
 
     @GetMapping("/")
     public String index() {
@@ -44,8 +55,20 @@ public class ControladorPrincipal {
 
     @GetMapping("/login")
     public String login(Model model) {
+        model.addAttribute("user", new User());
         return "login";
     }
+
+    @GetMapping("/menu")
+    public String menuUsuario(Model model, Principal principal) {
+        String username = principal.getName();
+
+        User user = servicioUserImpl.findByUsername(username);
+
+        model.addAttribute("user", user);
+        return "usuario";
+    }
+
 
     //registro
     @RequestMapping("/dataFormRegistro")

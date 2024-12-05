@@ -48,6 +48,8 @@ public class SecurityConfig {
                                 "/img.pizzas/**",
                                 "/carta",
                                 "/client",
+                                "/menu",
+                                "/changeLanguage",
                                 "/especificaciones",
                                 "/formClientes",
                                 "/formPizzas",
@@ -55,7 +57,9 @@ public class SecurityConfig {
                                 "/formclient",
                                 "/locales",
                                 "/membresia",
-                                "/reclamaciones"
+                                "/reclamaciones",
+                                "/pizzas/**",
+                                "/register/**"
                         
                         
                         ).permitAll()

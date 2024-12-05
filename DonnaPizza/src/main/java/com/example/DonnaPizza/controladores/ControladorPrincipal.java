@@ -95,10 +95,6 @@ public class ControladorPrincipal {
         return "redirect:" + request.getHeader("Referer");
     }
 
-    @GetMapping("/reclamaciones")
-    public String reclamaciones(Model model) {
-        return "reclamaciones";
-    }
 
     @GetMapping("/fromclient")
     public String fromclient(Model model) {

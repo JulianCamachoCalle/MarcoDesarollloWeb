@@ -25,33 +25,33 @@
                             <div class="card-body">
                                 <h2 class="card-title">Libro de Reclamaciones</h2>
                                 <h5 class="card-text">Identificación del consumidor reclamante</h5>
-                                <form>
+                                <form th:action="@{/registrarreclamacion}" th:object="${reclamaciones}" method="post">
                                     <div class="mb-3">
                                         <label for="nombre" class="form-label">Nombre</label>
-                                        <input type="text" class="form-control" id="nombre">
+                                        <input th:field="*{nombre}" type="text" class="form-control" id="nombre" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="domicilio" class="form-label">Domicilio</label>
-                                        <input type="text" class="form-control" id="domicilio">
+                                        <input th:field="*{domicilio}" type="text" class="form-control" id="domicilio" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="dni" class="form-label">DNI/CE</label>
-                                        <input type="number" class="form-control" id="dni">
+                                        <input th:field="*{dni}" type="number" class="form-control" id="dni" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="telefono" class="form-label">Teléfono</label>
-                                        <input type="tel" class="form-control" id="telefono">
+                                        <input th:field="*{telefono}" type="tel" class="form-control" id="telefono" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="correo" class="form-label">Correo Electrónico</label>
-                                        <input type="email" class="form-control" id="correo">
+                                        <input th:field="*{correo}" type="email" class="form-control" id="correo" required>
                                     </div>
-                                </form>
+                                    <br>
                                 <h5 class="card-text">Identificación del bien contratado</h5>
-                                <form>
+                                <br>
                                     <div class="mb-3">  
                                         <label for="bien-tipo" class="form-label">Tipo de Bien</label>
-                                        <select class="form-select" aria-label="Default select example" id="bien-tipo">
+                                        <select th:field="*{bien}" class="form-select" aria-label="Default select example" id="bien-tipo" required>
                                             <option selected>Seleccionar tipo de bien</option>
                                             <option value="producto">Producto</option>
                                             <option value="servicio">Servicio</option>
@@ -59,18 +59,18 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="monto-reclamado" class="form-label">Monto Reclamado</label>
-                                        <input type="number" class="form-control" id="monto-reclamado">
+                                        <input th:field="*{monto}" type="number" class="form-control" id="monto-reclamado" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="reclamo-descripcion" class="form-label">Descripción</label>
-                                        <input type="text" class="form-control" id="reclamo-descripcion">
+                                        <input th:field="*{descripcion}" type="text" class="form-control" id="reclamo-descripcion" required>
                                     </div>
-                                </form>
+                                <br>
                                 <h5 class="card-text">Detalle de la reclamación y pedido del consumidor</h5>
                                 <form>
                                     <div class="mb-3">  
                                         <label for="reclamo-tipo" class="form-label">Tipo de Reclamación</label>
-                                        <select class="form-select" aria-label="Default select example" id="reclamo-tipo">
+                                        <select th:field="*{tiporeclamo}" class="form-select" aria-label="Default select example" id="reclamo-tipo" required>
                                             <option selected>Seleccionar tipo de reclamación</option>
                                             <option value="reclamo">Reclamo</option>
                                             <option value="queja">Queja</option>
@@ -78,14 +78,14 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="reclamo-detalle" class="form-label">Detalle</label>
-                                        <textarea class="form-control" id="reclamo-detalle" rows="3" placeholder="Ingrese el detalle de su reclamación"></textarea>
+                                        <textarea th:field="*{detalle}" class="form-control" id="reclamo-detalle" rows="3" placeholder="Ingrese el detalle de su reclamación" required></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="reclamo-pedido" class="form-label">Pedido</label>
-                                        <textarea class="form-control" id="reclamo-pedido" rows="3" placeholder="Ingrese el detalle de su pedido"></textarea>
+                                        <textarea th:field="*{pedido}" class="form-control" id="reclamo-pedido" rows="3" placeholder="Ingrese el detalle de su pedido" required></textarea>
                                     </div>
                                     <div class="d-grid gap-2 col-3 mx-auto">
-                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#reclamacionModal">
+                                        <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#reclamacionModal">
                                             ENVIAR HOJA DE RECLAMACIÓN
                                         </button>
                                    </div>

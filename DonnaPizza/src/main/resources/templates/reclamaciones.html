@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
     <head>
         <meta charset="UTF-8">
@@ -11,12 +11,13 @@
     </head>
 
     <body>
-        <!--Header-->
+        
+<!--        Header-->
         <div class="container-fluid d-flex justify-content-center align-items-center flex-column p-0" id="container-principal">
             <div th:replace="fragments/header :: header">
             </div>
         </div>
-        <!--Fin Header-->
+<!--        Fin Header-->
         <div class="container-fluid py-4" id="container-contenido">
             <div class="container">
                 <div class="row">
@@ -36,7 +37,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="dni" class="form-label">DNI/CE</label>
-                                        <input th:field="*{dni}" type="number" class="form-control" id="dni" required>
+                                        <input th:field="*{dni}" type="text" class="form-control" id="dni" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="telefono" class="form-label">Teléfono</label>
@@ -67,7 +68,7 @@
                                     </div>
                                 <br>
                                 <h5 class="card-text">Detalle de la reclamación y pedido del consumidor</h5>
-                                <form>
+                                <br>
                                     <div class="mb-3">  
                                         <label for="reclamo-tipo" class="form-label">Tipo de Reclamación</label>
                                         <select th:field="*{tiporeclamo}" class="form-select" aria-label="Default select example" id="reclamo-tipo" required>
@@ -112,9 +113,9 @@
                 </div>
             </div>
         </div>
-        <!--Footer-->
+<!--        Footer-->
         <div th:replace="fragments/footer :: footer"></div>
-        <!--Fin Footer-->
+<!--        Fin Footer-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

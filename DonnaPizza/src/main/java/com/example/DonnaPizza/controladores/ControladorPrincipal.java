@@ -55,9 +55,9 @@ public class ControladorPrincipal {
 
     @GetMapping("/login")
     public String login(Model model) {
-        model.addAttribute("user", new User());
-        return "login";
-    }
+     model.addAttribute("user", new User());
+       return "login";
+   }
 
     @GetMapping("/menu")
     public String menuUsuario(Model model, Principal principal) {

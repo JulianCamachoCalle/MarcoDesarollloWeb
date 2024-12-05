@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -24,15 +25,22 @@ public class ReclamacionesControlador {
     ServicioReclamaciones ServicioReclamaciones;
     
      
-    @GetMapping("/reclamaciones")
+    @GetMapping("/registrarreclamacion")
     public String formreclamaciones(Model model) {
         model.addAttribute("reclamaciones", new reclamaciones());
-        return "reclamaciones";
+        return "reclamacion-form";
     }
 
     @PostMapping("/registrarreclamacion")
-    public String grabarClientes(@ModelAttribute reclamaciones reclamacion) {
-        ServicioReclamaciones.save(reclamacion);
-        return "redirect:/reclamaciones";
+    public String grabarReclamacion(@ModelAttribute reclamaciones reclamacion, Model model) {
+        try {
+            ServicioReclamaciones.save(reclamacion);
+            return "redirect:/reclamaciones";
+        } catch (DataIntegrityViolationException e) {
+            model.addAttribute("errorMessage", e.getMessage().toString());
+            model.addAttribute("reclamaciones", reclamacion);
+            return "reclamaciones";
+        }
+
     }
 }

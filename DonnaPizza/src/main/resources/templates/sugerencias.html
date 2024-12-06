@@ -79,6 +79,7 @@
                                     </div>
                                     <p class="card-text" th:text="#{form.sugerencia.legend.colocar}">Coloca tus sugerencias</p>
                                     <form th:action="@{/registrarsugerencia}" th:object="${sugerencias}" method="post">
+                                        
                                         <div class="mb-3">
                                             <label for="nombre" class="form-label" th:text="#{from.sugerencia.nombresugerencia}">Nombre</label>
                                             <input type="text" id="nombre" th:field="*{nombre}" class="form-control" th:placeholder="#{from.sugerencia.nombresugerencia}" required />

@@ -37,24 +37,24 @@ public class SugerenciasControlador {
     }
     
     @PostMapping("/registrarsugerencia")
-    public String grabarClientes(@ModelAttribute sugerencias sugerencia, Model model) {
+    public String grabarSugerencias(@ModelAttribute sugerencias sugerencia, Model model) {
         try {
             servicioSugerencias.save(sugerencia);
             return "redirect:/listasugerencias";
         } catch (DataIntegrityViolationException e) {
-            model.addAttribute("errorMessage", e.getMessage().toString());
+            model.addAttribute("errorMessage", e.getMessage());
             model.addAttribute("sugerencias", sugerencia);
             return "sugerencias";
         }
     }
        @GetMapping("/getEditsugerencias/{cod_suge}")
-    public String editFormsugerencias(Model model, @PathVariable("cod_suge") Long id) {
+    public String editFormsugerencias(@PathVariable("cod_suge") Long id, Model model) {
         sugerencias sugerencia = servicioSugerencias.get(id);
         model.addAttribute("sugerencias", sugerencia);
         return "sugerencias";
     }
     @GetMapping("/deletesugerencias/{cod_suge}")
-    public String deleteFormsugerencias(Model model, @RequestParam("id") Long id) {
+    public String deleteFormsugerencias(@PathVariable("cod_suge") Long id) {
         servicioSugerencias.delete(id);
         return "redirect:/listasugerencias";
     }

@@ -32,17 +32,21 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="sugerencias : ${lista}">
-                    <td th:text="${sugerencias.cod_suge}"></td>
-                    <td th:text="${sugerencias.nombre}"></td>
-                    <td th:text="${sugerencias.email}"></td>
-                    <td th:text="${sugerencias.descripcion}"></td>
+                <tr th:each="sugerencia : ${lista}">
+                    <td th:text="${sugerencia.cod_suge}"></td>
+                    <td th:text="${sugerencia.nombre}"></td>
+                    <td th:text="${sugerencia.email}"></td>
+                    <td th:text="${sugerencia.descripcion}"></td>
                     <td>
-                        <!-- Botón para editar -->
-                        <a th:href="@{'/getEditsugerencias/' + ${sugerencias.cod_suge}}" class="btn btn-warning btn-sm">Editar</a>
-                        <!-- Botón para eliminar -->
-                        <a th:href="@{'/deletesugerencias/' + ${sugerencias.cod_suge}}" class="btn btn-danger btn-sm"
-                           onclick="return confirm('¿Está seguro de eliminar este cliente?')">Eliminar</a>
+                       <a th:href="@{/getEditsugerencias/{id}(id=${sugerencia.cod_suge})}" 
+                           class="btn btn-warning">
+                            Editar
+                        </a>
+                        <a th:href="@{/deletesugerencias/{id}(id=${sugerencia.cod_suge})}" 
+                           class="btn btn-danger"
+                           onclick="return confirm('¿Estás seguro de eliminar esta sugerencia?')">
+                            Eliminar
+                        </a>
                     </td>
                 </tr>
             </tbody>

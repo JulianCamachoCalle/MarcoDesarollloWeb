@@ -36,16 +36,23 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http.csrf(csrf -> csrf.disable())
+    return http       
+        .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
+                        // Recursos estáticos siempre permitidos para cualquier ruta
+                        .requestMatchers(
+                                "/error/**",
+                                "/css/**", 
+                                "/js/**", 
+                                "/img/**", 
+                                "/img.pizzas/**", 
+                                "/webjars/**"
+                        ).permitAll()
+                        // Rutas públicas
                         .requestMatchers("/", "/index", 
                                 "/sugerencias", 
                                 "/login", 
                                 "/register", 
-                                "/css/**", 
-                                "/js/**", 
-                                "/img/**", 
-                                "/img.pizzas/**",
                                 "/carta",
                                 "/client",
                                 "/menu",
@@ -59,34 +66,43 @@ public class SecurityConfig {
                                 "/membresia",
                                 "/reclamaciones",
                                 "/pizzas/**",
-                                "/register/**"
-                        
-                        
+                                "/register/**",
+                                "/registrarsugerencia",
+                                "/registrarcontactos",
+                                "/registrarreclamacion"
                         ).permitAll()
-                        .requestMatchers("/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/menu/**").hasAnyRole("USER", "ADMIN")
-                        .requestMatchers("/cart/**").hasAnyRole("USER", "ADMIN")
+                        // Rutas administrativas
+                        .requestMatchers(
+                                "/admin"
+                                
+                        ).hasAuthority("ROLE_ADMIN")
+                        // Rutas para usuarios autenticados
+                        .requestMatchers("/menu/**", "/cart/**")
+                        .hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
                         .loginPage("/login")
                         .defaultSuccessUrl("/menu", true)
-                        .permitAll())
-                .logout(logout ->
-                        logout.logoutUrl("/logout")
+                        .failureUrl("/login?error=true")
+                        .permitAll()
+                )
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
                         .logoutSuccessUrl("/index")
-                        .permitAll())
+                        .invalidateHttpSession(true)
+                        .deleteCookies("JSESSIONID")
+                        .permitAll()
+                )
+                .exceptionHandling(ex -> ex
+                        .accessDeniedPage("/error/403")
+                )
                 .sessionManagement(session -> session
                         .invalidSessionUrl("/login")
                         .maximumSessions(1)
                         .expiredUrl("/login?expired")
-                        .maxSessionsPreventsLogin(false))
-                .sessionManagement(session -> session
-                        .sessionFixation().migrateSession()
-                        .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
-                        .invalidSessionUrl("/login")
-                        .maximumSessions(1)
-                        .expiredUrl("/login?expired"))
+                        .maxSessionsPreventsLogin(false)
+                )
                 .build();
     }
 
